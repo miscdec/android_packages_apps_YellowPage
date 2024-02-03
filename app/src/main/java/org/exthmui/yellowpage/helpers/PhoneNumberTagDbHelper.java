@@ -75,11 +75,13 @@ public class PhoneNumberTagDbHelper extends SQLiteOpenHelper {
         Cursor cursor = db.query(DataEntry.TABLE_NAME, null, DataEntry.COLUMN_NAME_NUMBER + " = " + number, null, null, null, null);
         PhoneNumberInfo info = null;
         if (cursor.moveToNext()) {
-            info = new PhoneNumberInfo();
-            info.number = number;
-            info.tag = cursor.getString(cursor.getColumnIndex(DataEntry.COLUMN_NAME_TAG));
-            info.type = cursor.getInt(cursor.getColumnIndex(DataEntry.COLUMN_NAME_TYPE));
+            info = new PhoneNumberInfo(
+                    number,
+                    cursor.getInt(cursor.getColumnIndex(DataEntry.COLUMN_NAME_TYPE)),
+                    cursor.getString(cursor.getColumnIndex(DataEntry.COLUMN_NAME_TAG))
+            );
         }
+
         cursor.close();
         return info;
     }

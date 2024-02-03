@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinAndroid)
     id("de.jensklingenberg.ktorfit") version "1.12.0"
     id("com.google.devtools.ksp") version "1.9.21-1.0.15"
+    kotlin("plugin.serialization").version("1.9.21")
 }
 
 android {
@@ -21,7 +22,9 @@ android {
             useSupportLibrary = true
         }
     }
-
+    buildFeatures {
+        buildConfig = true
+    }
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -66,6 +69,8 @@ dependencies {
     implementation("io.ktor:ktor-client-android")
 //    implementation("ch.qos.logback:logback-classic:+")
     implementation("io.ktor:ktor-client-logging")
+    implementation("io.ktor:ktor-client-content-negotiation")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.7")
 
     // define a BOM and its version
     implementation(platform(libs.okhttp.bom))
@@ -78,6 +83,10 @@ dependencies {
     api(libs.splitties.appctx)
 
     api(libs.libphonenumber)
+
+    // https://mvnrepository.com/artifact/commons-codec/commons-codec
+    implementation(libs.commons.codec)
+
 
 
     implementation(libs.androidx.core.ktx)

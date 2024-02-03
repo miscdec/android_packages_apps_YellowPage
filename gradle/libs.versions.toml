@@ -2,6 +2,7 @@
 agp = "8.4.0-alpha03"
 annotation = "1.7.1"
 carrier = "+"
+commonsCodec = "1.16.0"
 constraintlayout = "2.1.4"
 core = "1.12.0"
 geocoder = "+"
@@ -34,6 +35,7 @@ androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayo
 androidx-core = { module = "androidx.core:core", version.ref = "core" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 carrier = { module = "com.googlecode.libphonenumber:carrier", version.ref = "carrier" }
+commons-codec = { module = "commons-codec:commons-codec", version.ref = "commonsCodec" }
 geocoder = { module = "com.googlecode.libphonenumber:geocoder", version.ref = "geocoder" }
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 jsoup = { module = "org.jsoup:jsoup", version.ref = "jsoup" }

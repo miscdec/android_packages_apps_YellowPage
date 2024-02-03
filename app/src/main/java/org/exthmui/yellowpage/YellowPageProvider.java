@@ -24,6 +24,7 @@ import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.net.Uri;
 
+import androidx.annotation.NonNull;
 import androidx.preference.PreferenceManager;
 
 import org.exthmui.yellowpage.helpers.YellowPageDbHelper;
@@ -60,17 +61,17 @@ public class YellowPageProvider extends ContentProvider {
     }
 
     @Override
-    public int delete(Uri uri, String selection, String[] selectionArgs) {
+    public int delete(@NonNull Uri uri, String selection, String[] selectionArgs) {
         throw new UnsupportedOperationException("Not yet implemented");
     }
 
     @Override
-    public String getType(Uri uri) {
+    public String getType(@NonNull Uri uri) {
         return null;
     }
 
     @Override
-    public Uri insert(Uri uri, ContentValues values) {
+    public Uri insert(@NonNull Uri uri, ContentValues values) {
         throw new UnsupportedOperationException("Not yet implemented");
     }
 
@@ -82,7 +83,7 @@ public class YellowPageProvider extends ContentProvider {
     }
 
     @Override
-    public Cursor query(Uri uri, String[] projection, String selection,
+    public Cursor query(@NonNull Uri uri, String[] projection, String selection,
                         String[] selectionArgs, String sortOrder) {
         if (!sharedPreferences.getBoolean(Constants.KEY_YELLOWPAGE_ENABLED, true)) return null;
         MatrixCursor cursor = new MatrixCursor(Constants.YellowPageData.DATA_PROJECTION);
@@ -133,7 +134,7 @@ public class YellowPageProvider extends ContentProvider {
     }
 
     @Override
-    public int update(Uri uri, ContentValues values, String selection,
+    public int update(@NonNull Uri uri, ContentValues values, String selection,
                       String[] selectionArgs) {
         throw new UnsupportedOperationException("Not yet implemented");
     }
