@@ -25,10 +25,7 @@ import androidx.preference.PreferenceManager;
 
 import org.exthmui.yellowpage.R;
 import org.exthmui.yellowpage.helpers.PhoneNumberTagDbHelper;
-import org.exthmui.yellowpage.lookup.BaiduLookup;
 import org.exthmui.yellowpage.lookup.PhoneNumberLookup;
-import org.exthmui.yellowpage.lookup.Safe360Lookup;
-import org.exthmui.yellowpage.lookup.SogouLookup;
 import org.exthmui.yellowpage.misc.Constants;
 import org.exthmui.yellowpage.models.PhoneNumberInfo;
 
@@ -43,7 +40,7 @@ public class exTHmCallScreeningService extends CallScreeningService {
     private static final String TAG = "exTHmCallScreeningService";
 
     private PhoneNumberTagDbHelper phoneNumberTagDbHelper;
-    private final PhoneNumberLookup[] phoneNumberLookups = {new SogouLookup(), new BaiduLookup(), new Safe360Lookup()};
+    private final PhoneNumberLookup[] phoneNumberLookups = {};
     private SharedPreferences sharedPreferences;
     private final Map<String, Long> mRecentRejectPhoneNumber = new HashMap<>();
 
