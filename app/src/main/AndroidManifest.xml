@@ -15,8 +15,7 @@
     limitations under the License.
 -->
 
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.exthmui.yellowpage">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -33,21 +32,23 @@
         android:supportsRtl="true"
         android:exported="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
-        <!--
-            <intent-filter>
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/Theme.AppCompat.DayNight"
+            android:exported="true">
+
+        <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            -->
+
         </activity>
 
         <provider
             android:name=".PhoneNumberTagProvider"
             android:authorities="org.exthmui.yellowpage.PhoneNumberTagProvider"
-            android:enabled="true"
-            android:exported="true" />
+            android:enabled="true" />
 
         <service
             android:name=".services.exTHmCallScreeningService"
