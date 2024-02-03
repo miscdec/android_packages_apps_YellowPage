@@ -1,10 +1,12 @@
-apply plugin: 'com.android.library'
+plugins {
+    alias(libs.plugins.androidLibrary)
+}
 
 android {
-    compileSdkVersion rootProject.ext.compileSdk
+    compileSdk rootProject.ext.compileSdk
 
     defaultConfig {
-        minSdkVersion 24
+        minSdkVersion 31
         targetSdkVersion rootProject.ext.sdkVersion
     }
 
