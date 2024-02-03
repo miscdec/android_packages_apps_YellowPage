@@ -74,7 +74,8 @@
         <activity
             android:name=".SettingsActivity"
             android:exported="true"
-            android:label="@string/title_settings" >
+            android:label="@string/title_settings"
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>    

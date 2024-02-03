@@ -4,7 +4,7 @@ android {
     compileSdk rootProject.ext.sdkVersion
     namespace "org.exthmui.settingslib.collapsingtoolbar"
     defaultConfig {
-        minSdkVersion 31
+        minSdkVersion 29
         targetSdkVersion rootProject.ext.sdkVersion
         versionCode rootProject.ext.verCode
         versionName rootProject.ext.verName

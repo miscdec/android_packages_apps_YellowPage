@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "org.exthmui.yellowpage"
-        minSdk = 31
+        minSdk = 29
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
