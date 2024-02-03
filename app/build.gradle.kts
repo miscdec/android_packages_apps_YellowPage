@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    id("de.jensklingenberg.ktorfit") version "1.12.0"
+    id("com.google.devtools.ksp") version "1.9.21-1.0.15"
 }
 
 android {
@@ -53,11 +55,29 @@ dependencies {
     implementation(kotlin("stdlib-jdk8"))
 
 
+    implementation(libs.ktorfit.lib)
+    ksp(libs.ktorfit.ksp)
+
+    // Ktor
+    // https://mvnrepository.com/artifact/io.ktor/ktor-bom
+    implementation(platform(libs.ktor.bom))
+    implementation("io.ktor:ktor-client-core")
+    implementation("io.ktor:ktor-client-okhttp")
+    implementation("io.ktor:ktor-client-android")
+//    implementation("ch.qos.logback:logback-classic:+")
+    implementation("io.ktor:ktor-client-logging")
+
     // define a BOM and its version
     implementation(platform(libs.okhttp.bom))
     // define any required OkHttp artifacts without version
     implementation("com.squareup.okhttp3:okhttp")
     implementation("com.squareup.okhttp3:logging-interceptor")
+
+    implementation(libs.gson)
+
+    api(libs.splitties.appctx)
+
+    api(libs.libphonenumber)
 
 
     implementation(libs.androidx.core.ktx)
