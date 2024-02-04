@@ -25,9 +25,21 @@ android {
     buildFeatures {
         buildConfig = true
     }
+
     buildTypes {
         release {
+            isMinifyEnabled = true
+            isShrinkResources = true
+            isDebuggable = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+
+        }
+        debug {
             isMinifyEnabled = false
+            isDebuggable = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -71,6 +83,8 @@ dependencies {
     implementation("io.ktor:ktor-client-logging")
     implementation("io.ktor:ktor-client-content-negotiation")
     implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.7")
+// https://mvnrepository.com/artifact/org.slf4j/slf4j-nop
+    implementation(libs.slf4j.nop)
 
     // define a BOM and its version
     implementation(platform(libs.okhttp.bom))
@@ -98,5 +112,6 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    testImplementation(libs.junit.jupiter)
 
 }

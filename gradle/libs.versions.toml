@@ -6,18 +6,19 @@ commonsCodec = "1.16.0"
 constraintlayout = "2.1.4"
 core = "1.12.0"
 geocoder = "+"
-gson = "+"
+gson = "2.10.1"
 jsoup = "+"
+junitJupiter = "5.10.1"
 kotlin = "1.9.21"
-coreKtx = "+"
-junit = "+"
-junitVersion = "+"
-espressoCore = "+"
+coreKtx = "1.12.0"
+junit = "4.13.2"
+junitVersion = "1.1.5"
+espressoCore = "3.5.1"
 ktorBom = "2.3.7"
 ktorfitKsp = "1.12.0"
 ktorfitLib = "1.12.0"
 libphonenumber = "8.13.29"
-lifecycleRuntimeKtx = "+"
+lifecycleRuntimeKtx = "2.7.0"
 activityCompose = "+"
 composeBom = "+"
 appcompat = "1.6.1"
@@ -25,6 +26,7 @@ material = "1.11.0"
 okhttpBom = "4.12.0"
 rxandroid = "2.1.1"
 rxjava = "2.2.11"
+slf4jNop = "2.0.11"
 splittiesAppctx = "3.0.0"
 preferenceKtx = "1.2.1"
 compiler = "1.5.7"
@@ -53,6 +55,7 @@ androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-man
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junitJupiter" }
 ktor-bom = { module = "io.ktor:ktor-bom", version.ref = "ktorBom" }
 ktorfit-ksp = { module = "de.jensklingenberg.ktorfit:ktorfit-ksp", version.ref = "ktorfitKsp" }
 ktorfit-lib = { module = "de.jensklingenberg.ktorfit:ktorfit-lib", version.ref = "ktorfitLib" }
@@ -61,6 +64,7 @@ material = { group = "com.google.android.material", name = "material", version.r
 okhttp-bom = { module = "com.squareup.okhttp3:okhttp-bom", version.ref = "okhttpBom" }
 rxandroid = { module = "io.reactivex.rxjava2:rxandroid", version.ref = "rxandroid" }
 rxjava = { module = "io.reactivex.rxjava2:rxjava", version.ref = "rxjava" }
+slf4j-nop = { module = "org.slf4j:slf4j-nop", version.ref = "slf4jNop" }
 splitties-appctx = { module = "com.louiscad.splitties:splitties-appctx", version.ref = "splittiesAppctx" }
 androidx-preference-ktx = { group = "androidx.preference", name = "preference-ktx", version.ref = "preferenceKtx" }
 
