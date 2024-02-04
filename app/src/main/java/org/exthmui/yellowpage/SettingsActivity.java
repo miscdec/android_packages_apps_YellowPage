@@ -28,7 +28,7 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.view.MenuItem;
 
-import androidx.appcompat.app.ActionBar;
+import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.preference.Preference;
@@ -110,7 +110,7 @@ public class SettingsActivity extends ExthmCollapsingToolbarBaseActivity {
     }
 
     @Override
-    public void onAttachFragment(Fragment fragment) {
+    public void onAttachFragment(@NonNull Fragment fragment) {
         super.onAttachFragment(fragment);
         if (settingsFragment == null && fragment instanceof SettingsFragment) {
             settingsFragment = (SettingsFragment) fragment;
@@ -129,13 +129,9 @@ public class SettingsActivity extends ExthmCollapsingToolbarBaseActivity {
         yellowPageDbListener.preference = yellowPageDbStatus;
 
         yellowPageContributors.setOnPreferenceClickListener(preference -> {
-            Intent intent = new Intent();
-            intent.setAction(Intent.ACTION_VIEW);
-            Uri content_url = Uri.parse(Constants.YELLOWPAGE_CONTRIBUTORS_URL);
-            intent.setData(content_url);
-            if (intent.resolveActivity(getPackageManager()) != null) {
-                startActivity(intent);
-            }
+            Uri uri = Uri.parse(Constants.YELLOWPAGE_CONTRIBUTORS_URL);
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
             return true;
         });
 
